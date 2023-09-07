@@ -1,4 +1,4 @@
-var time = 62;
+var time = 60;
 var score = 0;
 var val;
 
@@ -21,12 +21,14 @@ function timer() {
         if (time > 0) {
             time--;
             document.querySelector("#timer").textContent = time;
+            if(time < 6){
+                document.querySelector("#timer").style.color = "red";
+            }
         }
         else {
             clearInterval(timer);
             document.querySelector("#panelbtm").innerHTML = `<h1>Game Over!</h1>`;
             document.querySelector("#hit").textContent = 0;
-            document.querySelector("#panelbtm").style.backgroundColor = "rgb(203, 203, 60)";
         }
     }, 1000)
 }
